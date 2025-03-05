@@ -12,19 +12,54 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
     <title>Home</title>
+    <link rel="stylesheet" href="/styles/menu-responsive.css">
 </head>
 
 <body>
-    <header class="nostyles">
-        <ul>
-            <a href="">
-                <li>Home</li>
+    <header class="header">
+        <!-- Barra de navegación -->
+        <div class="nav">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="/assets/img/logo.png" alt="Logo" class="logo-img">
             </a>
-            <a href="">Events</a>
-            <a href="">Our restaurant</a>
-            <a href="">Contact</a>
-        </ul>
+
+            <!-- Contenedor de los enlaces del menú -->
+            <nav class="menu-links">
+                <!-- Icono para cerrar el menú -->
+                <i class='bx bx-x close-menu' onclick="toggleMenu()"></i>
+
+                <a href="/" class="options-navbar inicio">HOME</a>
+                <a href="/pages/private-events.html" class="options-navbar events">EVENTS</a>
+                <a href="/pages/ourrestaurant.html" class="options-navbar our-restaurant">OUR RESTAURANT</a>
+                <a href="/pages/contact.html" class="options-navbar contact">CONTACT</a>
+            </nav>
+
+            <!-- Botón de contacto -->
+            <div class="boton-container">
+                <button class="booking">
+                    <a
+                        href="https://api.whatsapp.com/send?phone=573125536470&text=Hola%2C%20deseo%20más%20información%20acerca%20del%20Jardín%20Infantil%20Howard%20Gardner%E2%98%BA%EF%B8%8F">
+                        BOOK NOW
+                    </a>
+                </button>
+            </div>
+
+            <!-- Icono del menú -->
+            <i class='bx bx-menu menu-icon' onclick="toggleMenu()"></i>
+        </div>
     </header>
+
+    <!-- Navbar se mueve debajo del header en móvil -->
+    <div class="navbar-mobile">
+        <nav class="menu-links-mobile">
+            <a href="/" class="options-navbar inicio">HOME</a>
+            <a href="/pages/private-events.html" class="options-navbar events">EVENTS</a>
+            <a href="/pages/ourrestaurant.html" class="options-navbar our-restaurant">OUR RESTAURANT</a>
+            <a href="/pages/contact.html" class="options-navbar contact">CONTACT</a>
+        </nav>
+    </div>
+
     <main>
         <section class="private-three-img">
             <div class="container-img">
@@ -103,6 +138,7 @@
         </section>
     </main>
 
+    <script src="/assets/js/menu-responsive.js"></script>
 </body>
 
 </html>
