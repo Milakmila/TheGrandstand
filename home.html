@@ -8,101 +8,188 @@
     <link rel="stylesheet" href="./styles/base.css"">
     <link rel=" preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="/styles/menu-responsive.css">
+    <link rel="stylesheet" href="/styles/slider-home.css">
     <title>Home</title>
 </head>
 
 <body>
-    <header class="nostyles">
-        <ul>
-            <a href="">
-                <li>Home</li>
+
+    <header class="header">
+        <!-- Barra de navegación -->
+        <div class="nav">
+            <!-- Logo -->
+            <a href="/" class="logo">
+                <img src="/assets/img/logo.png" alt="Logo" class="logo-img">
             </a>
-            <a href="">Events</a>
-            <a href="">Our restaurant</a>
-            <a href="">Contact</a>
-        </ul>
+
+            <!-- Contenedor de los enlaces del menú -->
+            <nav class="menu-links">
+                <!-- Icono para cerrar el menú -->
+                <i class='bx bx-x close-menu' onclick="toggleMenu()"></i>
+
+                <a href="/" class="options-navbar inicio">HOME</a>
+                <a href="/pages/events.html" class="options-navbar events">EVENTS</a>
+                <a href="/pages/our-restaurant.html" class="options-navbar our-restaurant">OUR RESTAURANT</a>
+                <a href="/pages/contact.html" class="options-navbar contact">CONTACT</a>
+            </nav>
+
+            <!-- Botón de contacto -->
+            <div class="boton-container">
+                <button class="booking">
+                    <a
+                        href="https://api.whatsapp.com/send?phone=573125536470&text=Hola%2C%20deseo%20más%20información%20acerca%20del%20Jardín%20Infantil%20Howard%20Gardner%E2%98%BA%EF%B8%8F">
+                        BOOK NOW
+                    </a>
+                </button>
+            </div>
+
+            <!-- Icono del menú -->
+            <i class='bx bx-menu menu-icon' onclick="toggleMenu()"></i>
+        </div>
     </header>
+
+    <!-- Navbar se mueve debajo del header en móvil -->
+    <div class="navbar-mobile">
+        <nav class="menu-links-mobile">
+            <a href="/" class="options-navbar inicio">HOME</a>
+            <a href="/pages/events.html" class="options-navbar events">EVENTS</a>
+            <a href="/pages/our-restaurant.html" class="options-navbar our-restaurant">OUR RESTAURANT</a>
+            <a href="/pages/contact.html" class="options-navbar contact">CONTACT</a>
+        </nav>
+    </div>
+
+
     <main>
-        <section class="carousel-main">
-
-        </section>
-        <section class="schedule">
-            <div class="schedule-gallery">
-                <div class="left">
-                    <div class="schedule-gallery-item"> <img src="" alt=""></div>
-                    <div class="schedule-gallery-item"> <img src="" alt=""></div>
-                </div>
-                <div class="right">
-                    <div class="schedule-gallery-item"> <img src="" alt=""></div>
-                    <div class="schedule-gallery-item"> <img src="" alt=""></div>
-                </div>
-
-            </div>
-            <div class="schedule-titles">
-                <h3></h3>
-                <h2></h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam explicabo alias, doloribus provident
-                    architecto quos repudiandae dolore dignissimos, dicta optio eveniet perspiciatis iusto deleniti
-                    placeat minima magnam modi veniam. Provident.</p>
-                <a href="" class="btn btn-yellow"></a>
-
-            </div>
-
-        </section>
-        <section class="general-img-menu">
-            <div class="image-container-img-menu book">
-                <img src="" alt="">
-            </div>
-            <a href="">
-                <div class="image-container-img-menu view">
-                    <img src="" alt="">
-                </div>
-            </a>
-            <a href="">
-                <div class="image-container-img-menu menu">
-                    <img src="" alt="">
-                </div>
-            </a>
-
-        </section>
-        <section class="gallery">
-            <div class="left-gallery">
-                <div class="gallery-large">
-                    <img src="" alt="">
-                </div>
-                <div class="small-items">
-                    <div class="small-image-container">
-                        <img src="" alt="">
+        <div class="slider">
+            <div class="slides">
+                <!-- Slide 1 -->
+                <div class="slide">
+                    <img src="/assets/img/slider1.jpg" alt="Slide 1">
+                    <div class="caption">
+                        <h1>BEST-KEPT SECRETS AT UNI SYDNEY</h1>
+                        <button>MENU & ORDERING</button>
                     </div>
-                    <div class="small-image-container">
-                        <img src="" alt="">
-                    </div>
-
                 </div>
-
+                <!-- Slide 2 -->
+                <div class="slide">
+                    <img src="/assets/img/slider2.jpg" alt="Slide 2">
+                    <div class="caption">
+                        <h1>BEST-KEPT SECRETS AT UNI SYDNEY</h1>
+                        <button>MENU & ORDERING</button>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="slide">
+                    <img src="/assets/img/slider3.avif" alt="Slide 3">
+                    <div class="caption">
+                        <h1>BEST-KEPT SECRETS AT UNI SYDNEY</h1>
+                        <button>MENU & ORDERING</button>
+                    </div>
+                </div>
             </div>
-            <div class="right-gallery">
-                <div class="gallery-large">
-                    <img src="" alt="">
-                </div>
-                <div class="small-items">
-                    <div class="small-image-container">
-                        <img src="" alt="">
-                    </div>
-                    <div class="small-image-container">
-                        <img src="" alt="">
-                    </div>
+            <!-- Navigation arrows -->
+            <i class='bx bx-chevron-left arrow arrow-left'></i>
+            <i class='bx bx-chevron-right arrow arrow-right'></i>
+            <!-- Navigation dots -->
+            <div class="navigation-dots"></div>
+        </div>
 
+        <div class="schedules">
+            <div class="gallery-shedules">
+                <div class="gallery-item-shedules">
+                    <img src="/assets/img/gallery-schedule-1.jpg" alt="Image 1">
                 </div>
-
+                <div class="gallery-item-shedules">
+                    <img src="/assets/img/gallery-schedule-2.jpg" alt="Image 2">
+                </div>
+                <div class="gallery-item-shedules">
+                    <img src="/assets/img/gallery-schedule-3.jpg" alt="Image 3">
+                </div>
+                <div class="gallery-item-shedules">
+                    <img src="/assets/img/gallery-schedule-4.jpg" alt="Image 4">
+                </div>
             </div>
 
-        </section>
+
+            <div class="text-schedules">
+                <div class="text-schedules-part-1">
+                    <h3>OPEN UNTIL 3PM</h3>
+                    <h2>WED | THU | FRI</h2>
+                </div>
+
+                <div class="text-schedules-part-2">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra erat quis ligula bibendum
+                        bibendum. Praesent eget dolor neque. Nullam lorem ipsum, eleifend in leo a, vulputate auctor
+                        orci. Fusce et ultricies quam, a cursus nibh</p>
+                </div>
+
+                <button class="yellow-btn">ENQUIRY</button>
+            </div>
+        </div>
+
+
+        <div class="cards-container">
+            <div class="card">
+                <img src="/assets/img/card-1.jpg" alt="Book a Table">
+                <p class="text-overlay">Book a Table</p>
+            </div>
+            <div class="card">
+                <img src="/assets/img/card-2.jpg" alt="Restaurant View">
+                <p class="text-overlay">Restaurant View</p>
+            </div>
+            <div class="card">
+                <img src="/assets/img/card-3.jpg" alt="Menu View">
+                <p class="text-overlay">Menu View</p>
+            </div>
+        </div>
+
+        <div class="gallery-container">
+            <h1>Gallery</h1>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="/assets/img/Gallery/image-1.jpg" alt="Food Image 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/img/Gallery/image-2.png" alt="Food Image 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/img/Gallery/image-3.jpg" alt="Food Image 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/img/Gallery/image-4.jpg" alt="Food Image 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/img/Gallery/image-5.jpg" alt="Food Image 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/img/Gallery/image-6.jpg" alt="Food Image 6">
+                </div>
+            </div>
+        </div>
+        
+
     </main>
 
+    <footer>
+        <div class="credits">
+            <p>Since @YEAR | Elegancy Group</p>
+        </div>
+
+        <div class="social-networks">
+            <i class='bx bxl-facebook'></i>
+            <i class='bx bxl-instagram'></i>
+            <i class='bx bxl-twitter'></i>
+        </div>
+
+    </footer>
+
+    <script src="/assets/js/menu-responsive.js"></script>
+    <script src="/assets/js/slider.js"></script>
 </body>
 
 </html>

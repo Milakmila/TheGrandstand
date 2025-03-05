@@ -1,0 +1,561 @@
+/* General styles */
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* --------------------------------- SCHEDULE ------------------------------- */
+.schedules {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px;
+  margin-bottom: 50px;
+}
+
+.text-schedules {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: baseline;
+  gap: 30px;
+  width: 35%;
+}
+
+.text-schedules .text-schedules-part-1 h3 {
+  font-weight: 500;
+  color: #000000;
+}
+
+.text-schedules .text-schedules-part-1 h2 {
+  font-weight: 700;
+  color: #000000;
+}
+
+.text-schedules .text-schedules-part-2 p {
+  font-weight: 400;
+  color: #000000;
+}
+
+.yellow-btn {
+  background-color: #EABA32;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+
+/* --------------------------------- GALLERY OF SCHEDULE ------------------------------- */
+
+/* Contenedor de la galería */
+.gallery-shedules {
+  display: grid;
+  grid-template-columns: repeat(2, 0.5fr);
+  /* Dos columnas de igual tamaño */
+  grid-template-rows: 1fr 1fr;
+  /* Dos filas de igual tamaño */
+  gap: 20px;
+  /* Espacio entre las imágenes */
+  width: 50%;
+  /* Asegura que la galería no ocupe todo el ancho */
+  margin: 0 auto;
+  /* Centra la galería */
+  padding: 20px;
+  box-sizing: border-box;
+  /* Asegura que el padding no se desborde */
+}
+
+/* Estilo para los elementos de la galería (contenedores de imágenes) */
+.gallery-item-shedules {
+  display: flex;
+  justify-content: center;
+  /* Centra las imágenes dentro del contenedor */
+  align-items: center;
+  /* Centra las imágenes verticalmente */
+  overflow: hidden;
+  position: relative;
+  /* Necesario para los desplazamientos de top y bottom */
+  width: 100%;
+  /* Asegura que los contenedores ocupen todo el ancho disponible dentro de la celda */
+  max-width: 250px;
+  /* Establece un ancho máximo de 200px para los contenedores */
+  aspect-ratio: 1;
+  /* Asegura que el contenedor sea cuadrado */
+}
+
+/* Imagen dentro de cada contenedor */
+.gallery-item-shedules img {
+  width: 100%;
+  /* Asegura que las imágenes ocupen el 100% del contenedor */
+  height: 100%;
+  /* Hace que la altura de las imágenes sea igual al contenedor */
+  object-fit: cover;
+  /* Asegura que las imágenes se ajusten sin distorsionarse */
+}
+
+/* Mueve hacia abajo la segunda columna */
+.gallery-item-shedules:nth-child(2),
+.gallery-item-shedules:nth-child(4) {
+  position: relative;
+  top: 50px;
+  /* Mueve las imágenes de la segunda columna hacia abajo */
+}
+
+/* Coloca las otras imágenes en su lugar correcto */
+.gallery-item-shedules:nth-child(1) {
+  grid-column: 1;
+  /* Coloca la imagen en la primera columna */
+  grid-row: 1;
+  /* Coloca la imagen en la primera fila */
+}
+
+.gallery-item-shedules:nth-child(2) {
+  grid-column: 2;
+  /* Coloca la imagen en la segunda columna */
+  grid-row: 1;
+  /* Coloca la imagen en la primera fila */
+}
+
+.gallery-item-shedules:nth-child(3) {
+  grid-column: 1;
+  /* Coloca la imagen en la primera columna */
+  grid-row: 2;
+  /* Coloca la imagen en la segunda fila */
+}
+
+.gallery-item-shedules:nth-child(4) {
+  grid-column: 2;
+  /* Coloca la imagen en la segunda columna */
+  grid-row: 2;
+  /* Coloca la imagen en la segunda fila */
+}
+
+
+/* Responsividad para pantallas medianas (tabletas) */
+@media (max-width: 1024px) {
+  .schedules {
+    gap: 20px;
+  }
+
+  .text-schedules {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    gap: 20px;
+    width: 80%;
+  }
+
+  .text-schedules button {
+    /* Centramos el botón horizontalmente */
+    align-self: center;
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    font-size: 16px; /* Tamaño del texto en el botón */
+
+  }
+
+  .gallery-shedules {
+    background-color: red;
+    grid-template-columns: 1fr 1fr; 
+    width: 90%; /* Ajusta el ancho de la galería */
+    padding: 20px 0;
+  }
+
+  .gallery-item-shedules {
+    max-width: 400px; /* Reduce aún más el tamaño de los contenedores */
+    height: 120px; /* Asegura que las imágenes tengan una altura constante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .gallery-item-shedules img {
+    width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
+    height: 100%; /* Asegura que las imágenes ocupen toda la altura del contenedor */
+    object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsionarse */
+  }
+
+  .gallery-item-shedules:nth-child(2),
+  .gallery-item-shedules:nth-child(4) {
+    position: static; /* Elimina cualquier movimiento previo con position: relative; */
+    top: 0; /* Restaura la posición original */
+  }
+}
+
+/* Responsividad para pantallas pequeñas (móviles) */
+@media (max-width: 420px) {
+  .schedules {
+    gap: 20px;
+  }
+
+  .text-schedules {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    gap: 20px;
+    width: 80%;
+  }
+
+  .text-schedules button {
+    /* Centramos el botón horizontalmente */
+    align-self: center;
+    padding: 10px 20px; /* Ajusta el padding según sea necesario */
+    font-size: 16px; /* Tamaño del texto en el botón */
+
+  }
+
+  .gallery-shedules {
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    width: 90%; /* Ajusta el ancho de la galería */
+    padding: 20px 0;
+  }
+
+  .gallery-item-shedules {
+    max-width: 120px; /* Reduce aún más el tamaño de los contenedores */
+    height: 120px; /* Asegura que las imágenes tengan una altura constante */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .gallery-item-shedules img {
+    width: 100%; /* Asegura que las imágenes ocupen el 100% del contenedor */
+    height: 100%; /* Asegura que las imágenes ocupen toda la altura del contenedor */
+    object-fit: cover; /* Asegura que las imágenes se ajusten sin distorsionarse */
+  }
+
+  .gallery-item-shedules:nth-child(2),
+  .gallery-item-shedules:nth-child(4) {
+    position: static; /* Elimina cualquier movimiento previo con position: relative; */
+    top: 0; /* Restaura la posición original */
+  }
+}
+
+
+
+
+
+/* --------------------------------- PART 3: CARDS ------------------------------- */
+/* Contenedor de las tarjetas */
+.cards-container {
+ padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  flex-direction: row; /* <- Forzamos fila por defecto */
+}
+
+/* Contenedor individual de cada tarjeta */
+.cards-container .card {
+  width: 100%;
+  max-width: 350px;
+  position: relative;
+}
+
+/* Imagen dentro de cada tarjeta */
+.cards-container .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 1;
+  /* Hace que las imágenes sean cuadradas */
+}
+
+/* Capa semitransparente usando ::before */
+.cards-container .card::before {
+  content: "";
+  /* Necesario para el pseudo-elemento */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 99%;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Fondo negro semitransparente */
+  z-index: 1;
+  /* Asegura que esté encima de la imagen */
+}
+
+/* Estilo para el texto */
+.cards-container .card .text-overlay {
+  font-family: 'Montserrat', sans-serif;
+  position: absolute;
+  top: 50%;
+  /* Centra el texto verticalmente */
+  left: 50%;
+  /* Centra el texto horizontalmente */
+  transform: translate(-50%, -50%);
+  /* Ajusta para que el texto quede perfectamente centrado */
+  color: white;
+  /* Color del texto */
+  font-size: 30px;
+  /* Tamaño del texto */
+  font-weight: 500;
+  /* Hace el texto más grueso */
+  text-align: center;
+  /* Centra el texto */
+  z-index: 2;
+  /* Asegura que el texto esté por encima de la capa */
+  width: 100%;
+  max-width: 250px;
+}
+
+
+
+
+/* ______________________ GALLERY  ______________________ */
+.gallery-container {
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.gallery-container h1 {
+  color: #000000;
+}
+
+
+/* Contenedor de la galería */
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  /* 4 columnas de igual tamaño */
+  grid-template-rows: 1fr 1fr;
+  /* 2 filas de igual tamaño */
+  gap: 20px;
+  /* Espacio entre las imágenes */
+  width: 100%;
+  max-width: 1000px;
+  /* Ajusta el tamaño de la galería */
+  margin: 0 auto;
+  /* Centra la galería */
+  padding: 60px 0;
+}
+
+/* Asignamos áreas específicas a cada columna para la disposición */
+.gallery-item:nth-child(1) {
+  grid-column: 1 / 2;
+  /* La imagen ocupará las dos filas en la primera columna */
+  grid-row: span 2;
+  /* Ocupará las dos filas */
+}
+
+.gallery-item:nth-child(2) {
+  grid-column: 2 / 3;
+  /* Primera imagen de la segunda columna */
+  grid-row: 1;
+  /* Colocamos en la primera fila */
+}
+
+.gallery-item:nth-child(3) {
+  grid-column: 2 / 3;
+  /* Segunda imagen de la segunda columna */
+  grid-row: 2;
+  /* Colocamos en la segunda fila */
+}
+
+.gallery-item:nth-child(4) {
+  grid-column: 3 / 4;
+  /* La imagen ocupará las dos filas en la tercera columna */
+  grid-row: span 2;
+  /* Ocupará las dos filas */
+}
+
+.gallery-item:nth-child(5) {
+  grid-column: 4 / 5;
+  /* Primera imagen de la cuarta columna */
+  grid-row: 1;
+  /* Colocamos en la primera fila */
+}
+
+.gallery-item:nth-child(6) {
+  grid-column: 4 / 5;
+  /* Segunda imagen de la cuarta columna */
+  grid-row: 2;
+  /* Colocamos en la segunda fila */
+}
+
+/* Estilo para cada imagen */
+.gallery-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  /* Bordes redondeados */
+}
+
+.gallery-item img {
+  width: 100%;
+  /* Asegura que las imágenes ocupen todo el ancho */
+  height: 100%;
+  /* Asegura que las imágenes ocupen toda la altura del contenedor */
+  object-fit: cover;
+  /* Hace que las imágenes se ajusten sin distorsionarse */
+}
+
+/* ------------------- RESPONSIVE ------------------- */
+
+/* Responsividad para pantallas medianas (como tabletas) */
+@media (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: 1fr 1fr; /* 2 columnas */
+    grid-template-rows: auto; /* Las filas se ajustan automáticamente */
+    padding: 40px 0; /* Reduce el padding */
+  }
+
+  /* Ajuste de las imágenes */
+  .gallery-item {
+    max-width: 100%; /* Permite que las imágenes ocupen todo el espacio disponible */
+  }
+
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(4) {
+    grid-column: span 2; /* Las imágenes de la primera y tercera columna ocupan dos columnas */
+    grid-row: span 1; /* Se asegura de ocupar solo una fila */
+  }
+}
+
+/* Responsividad para pantallas pequeñas (móviles) */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: 1fr; /* Dos columnas en pantallas pequeñas */
+    grid-template-rows: auto; /* Las filas se ajustan automáticamente */
+    padding: 20px 0; /* Reduce el padding */
+  }
+
+  /* Las imágenes se ajustan a un tamaño más pequeño */
+  .gallery-item {
+    max-width: 80%; /* Hace que las imágenes sean más pequeñas en pantallas pequeñas */
+    margin: 0 auto; /* Centra las imágenes */
+    border-radius: 0px;
+  }
+
+  .gallery-item img {
+    
+    width: 250px; /* Asegura que las imágenes ocupen todo el contenedor */
+    max-width: 100%;
+    height: 180px; /* Ajusta la altura automáticamente */
+    max-height: 100%;
+  }
+
+  /* Las imágenes de las primeras y terceras columnas ocupan dos columnas */
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(4) {
+    grid-column: 1 / 2; /* Colocamos las imágenes en una sola columna */
+    grid-row: auto;
+  }
+
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(5),
+  .gallery-item:nth-child(6) {
+    grid-column: 1 / 2; /* Las imágenes de la segunda, tercera, quinta y sexta columna se colocan en la misma columna */
+    grid-row: auto;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    grid-template-rows: auto;
+    padding: 40px 20px;
+    gap: 20px;
+    max-width: 800px; /* Limitamos el ancho total de la galería */
+    margin: 0 auto;
+  }
+
+  .gallery-item {
+    max-width: 100%;
+    margin: 0;
+    border-radius: 10px;
+    height: 250px; /* Altura fija para cada item */
+    overflow: hidden;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Ajustamos posiciones para mantener orden */
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(4) {
+    grid-column: span 2; /* Ocupan las dos columnas */
+    height: 300px; /* Un poco más grandes las destacadas */
+  }
+
+  .gallery-item:nth-child(2),
+  .gallery-item:nth-child(3),
+  .gallery-item:nth-child(5),
+  .gallery-item:nth-child(6) {
+    grid-column: auto;
+  }
+}
+
+
+
+
+
+@media screen and (max-width: 768px) {
+  .schedules {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .cards-container {
+    flex-direction: column;
+  }
+
+  .cards-container .card {
+    width: 100%;
+    max-width: 230px;
+    position: relative;
+    /* Necesario para colocar la capa antes del contenido */
+  }
+
+
+  .cards-container .card .text-overlay {
+    font-size: 20px;
+  }
+
+  .cards-container .card::before {
+    height: 98%;
+  }
+
+  footer{
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+  }
+
+
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 30px;
+  background-color: #000000;
+}
+
+footer .credits p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+footer .social-networks i {
+  color: #fff;
+  font-size: 2rem;
+}
